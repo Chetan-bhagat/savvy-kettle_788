@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Basket</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="stylesheet" href="./Css/register.css" />
+</head>
+
+<body>
+  <div id="topLogo">
+    <a href="index.html"><img id="home" alt="logo" src="./Images/Green Basket.png" /></a>
+  </div>
+
+  <div id="signInBody">
+    <div id="links">
+      <div><a href="login.html">SIGN IN</a></div>
+      <div><a href="register.html">REGISTER</a></div>
+    </div>
+    <div id="formDiv">
+      <form id="form">
+        <input id="email" type="email" placeholder="Email" required />
+        <input id="password" type="password" placeholder="Password" required />
+        <div id="checkbox">
+          <input id="check" type="checkbox" />
+          <p>Keep me logged in</p>
+          <a id="forget" href="">Forgot your password?</a>
+        </div>
+        <input class="user button" type="submit" value="Sign In" />
+        <input class="admin button" type="submits" value="login as Admin" />
+      </form>
+      <div id="viaGoogle">
+        <p>or conect Via</p>
+        <img
+          src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
+          alt="" />
+      </div>
+    </div>
+  </div>
+
+
+  <div id="copyright">
+    <p>Copyright © 2014-2022 Green Basket. All Rights Reserved.</p>
+  </div>
+  </div>
+</body>
+
+</html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  document.querySelector("#form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    let Email = document.querySelector("#email").value;
+    let Password = document.querySelector("#password").value;
+    if (Email !== "" && Email !== undefined && Password != "" && Password != undefined) {
+      const payload = {
+        Email,
+        Password,
+      };
+      fetch("http://localhost:9168/sign/login", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      }).then((res) => {
+        return res.json()
+      }).then((data) => {
+        console.log(data)
+        if (data.msg == "LOGGIN SUCCESSFUL") {
+        
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("username", data.username);
+          localStorage.setItem("userid", data.UserID);
+          swal(
+        "Login Successful",
+        "Welcome",
+        "success"
+      )
+      setTimeout(function () {
+        // window.location.href = "index.html";
+      }, 2000);
+          // window.location.href = "index.html"
+        } else if (data.msg == "Invalid Password") {
+          swal(
+        "Invalid Password",
+        "Please Enter valid password",
+        "error"
+      )
+        }
+        else if (data.msg == "Email not Found") {
+          swal(
+        "Email not found",
+        "Please Enter valid email",
+        "error"
+      )
+        }
+      }).catch((err) => {
+        console.log(err)
+      })
+
+    } else {
+      swal(
+        "Invalid Details",
+        "Please Enter valid email or password",
+        "error"
+      )
+    }
+
+  });
+
+  // *****************admin*************
+
+  document.querySelector(".admin").addEventListener("click", () => {
+    let getEmail = document.getElementById("email").value
+    let getPassword = document.getElementById("password").value
+    if (getEmail == "admin@gmail.com" && getPassword == "admin@123") {
+      swal(
+        "User Logged in",
+        "Welcome",
+        "success"
+      )
+
+      // window.location.href="admin.html";
+      setTimeout(function () {
+        window.location.href = "admin.html";
+      }, 2000);
+    } else {
+      swal(
+        "Wrong email or password",
+        "Please Enter valid email or password",
+        "error"
+      );
+    }
+  });
+</script>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Backet</title>
+    <link rel="stylesheet" href="./CSS/admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<style>
+    
+ form>input:nth-child(5) {
+        background-color: red;
+        height: 50px;
+        width: 40%;
+        color: white;
+        font-weight: 600;
+        margin: auto;
+    }
+
+    form>input:nth-child(5):hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        color: black;
+    }
+
+</style>
+
+<body>
+    <!-- nabar -->
+    <div id="nav">
+        <div id="nav1">
+        <i id="username"><ion-icon name="person-outline"></ion-icon> Admin</i>
+        </div>
+        <a href="index.html"><img id="logo" src=".\Images\Green Basket.png"></a>
+    </div>
+    <!-- end -->
+
+    </div>
+    <div id="welcome">
+        <h1 style="margin-left: 30px">Hi, Admin <spam id="auto1"></spam>
+        </h1>
+    </div>
+    <div id="sections">
+        <!-- <div>
+            <div><img src="./Images/total.png" /></div>
+            <div>
+                <h3>Total Products</h3>
+                <p>
+                    <spam id="total">0 </spam> This Month
+                </p>
+            </div>
+        </div> -->
+        <div>
+            <div><img src="./Images/added.png" /></div>
+            <div>
+                <h3>Add Product: </h3>
+                <p>
+                    This Operation will add the new product to the database and refelected in the app .
+                </p>
+            </div>
+        </div>
+        <div>
+            <div><img src="./Images/removed.png" /></div>
+            <div>
+                <h3>Removed Product: </h3>
+                <p>
+                    This Operation will remove the product to the database and app as well.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div><img src="./Images/update.png" /></div>
+            <div>
+                <h3>Updated Product: </h3>
+                <p>
+                    This Operation will remove the update to the database make sure the categoty should correct.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="middle">
+        <img src="./Images/sideimage.png" />
+        <div id="input">
+            <a href="admin.html"><button style="margin-top: 30px">Add Product</button></a>
+            <a href="delete.html"><button>Delete Product</button></a>
+            <a href="update.html"><button>Update Product</button></a>
+            <div id="form">
+                <form>
+                    <input type="text" id="Name" placeholder="Enter Name of Item" />
+                    <input type="number" id="Price" placeholder="Enter Price" />
+                    <input type="text" id="Category" placeholder="Enter Category" />
+                    <input type="text" id="Image" placeholder="Enter Image URL" />
+                    <input style="font-size: 18px; width: 94%" type="button" id="postBtn" value="Click to Submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        Copyright © 2014-2022 Green Basket.com. All Rights Reserved.
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed("#auto1", {
+            strings: ["Welcome Back !!"],
+            typeSpeed: 60,
+            backSpeed: 60,
+            loop: true,
+        });
+        //   ****************admin**********
+        let postBtn = document.getElementById("postBtn");
+        postBtn.addEventListener("click", async () => {
+            let Name = document.getElementById("Name").value;
+            let Price = document.getElementById("Price").value;
+            let Category = document.getElementById("Category").value;
+            let Image = document.getElementById("Image").value;
+            let obj = { Name, Price, Category, Image };
+
+            if (Name == "" && Price == "" && Category == "" && Image == "") {
+                alert("Enter Valid Details")
+            }
+            else {
+                await fetch(
+                    "http://localhost:9168/admin/addproduct",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(obj),
+                    }
+                ).then((res) => {
+                    return res.json()
+                }).then((data) => {
+                    if (data.msg == "product added") {
+                        swal(
+                            "Product Added Successful",
+                            "Done",
+                            "success"
+                        )
+                    }else{
+                        swal(
+                            "Something Went Wront",
+                            "Please Check",
+                            "error"
+                        )
+                    }
+                    // localStorage.setItem("totalcount", data.total);
+                }).catch((err) => {
+                    console.log(err)
+                })
+
+
+            }
+        });
+        // ///counts
+        // countitems()
+        // async function countitems() {
+        //     try {
+        //         let res = await fetch("https://636a3f79b10125b78fd51599.mockapi.io/products");
+        //         let data = await res.json();
+        //         localStorage.setItem("totalcount", data.length)
+        //     }
+        //     catch (err) {
+        //         console.log(err)
+        //     }
+        // }
+        let displaytotalcount = localStorage.getItem("totalcount") || 0;
+        document.querySelector("#total").innerText = displaytotalcount;
+        let displayupdatecount = localStorage.getItem("updatecount") || 0;
+        document.querySelector("#updated").innerText = displayupdatecount;
+        let displaypostcount = localStorage.getItem("postcount") || 0;
+        document.querySelector("#added").innerText = displaypostcount;
+        let displaycount = localStorage.getItem("deletecount") || 0;
+        document.querySelector("#removed").innerText = displaycount;
+    </script>
+
+
+</body>
+
+</html>

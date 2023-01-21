@@ -1,0 +1,106 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    width: 92%;
+    margin: auto;
+    padding: 0.2%;
+    margin-top: 5px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom: 0.1px solid gray;
+    background-color: white;
+    /* position: sticky;
+    top: 0; */
+}
+
+#nav1 {
+    display: flex;
+    justify-content: end;
+
+}
+
+#nav1>i {
+    padding: 5px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 530;
+}
+#nav1>i>a{
+    text-decoration: none;
+    color: black;   
+
+}
+#nav1>i>a:hover{
+    color: rgb(14, 125, 14);
+}
+#nav1>i:hover {
+   color: rgb(14, 125, 14);
+}
+
+#nav2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav2>div {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(150, 166, 180);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#nav2>div>input {
+    display: flex;
+    width: 520px;
+    height: 32px;
+    font-size: 15px;
+    color: rgb(43, 43, 43);
+    margin-top: 5px;
+    border-radius: 0%;
+    border: 0.5px solid black;
+}
+#search{
+    background-color: rgb(76, 142, 43);
+    width: 30px;
+    height: 34px;
+    color: white;
+    margin-top: 5.0px;
+    border-right: 0.5px solid black;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+}
+
+#logo {
+    width: 220px;
+    height: 120px;
+    margin-top: -30px;
+}
+
+#nav2>div img {
+    width: 40px;
+    height: 30px;
+    margin: 7px;
+}
+#cart{
+    margin-top: -20px;
+}
+.innav{
+    background-color:  rgb(76, 142, 43);
+    border: 0ch;
+    color: white;
+    padding: 0.5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-top: -15px;
+}
+#tag{
+    color: white;
+    padding-right: 5px;
+}
+#tag:hover{
+    color: red;
+}
+

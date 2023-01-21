@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Basket</title>
+  <link rel="stylesheet" href="./CSS/admin.css" />
+</head>
+<style>
+  form>input:nth-child(7) {
+    background-color: red;
+    height: 50px;
+    width: 40%;
+    color: white;
+    font-weight: 600;
+    margin: auto;
+  }
+
+  form>input:nth-child(7):hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color: black;
+  }
+</style>
+
+<body>
+  <div id="nav">
+    <br>
+    <a href="index.html"><img id="logo" src=".\Images\Green Basket.png"></a>
+  </div>
+  <div id="welcome">
+    <h1 style="margin-left: 30px">Hi, Admin <spam id="auto1"></spam>
+    </h1>
+  </div>
+  <div id="sections">
+    <div>
+            <div><img src="./Images/added.png" /></div>
+            <div>
+                <h3>Add Product: </h3>
+                <p>
+                    This Operation will add the new product to the database and refelected in the app .
+                </p>
+            </div>
+        </div>
+        <div>
+            <div><img src="./Images/removed.png" /></div>
+            <div>
+                <h3>Removed Product: </h3>
+                <p>
+                    This Operation will remove the product to the database and app as well.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div><img src="./Images/update.png" /></div>
+            <div>
+                <h3>Updated Product: </h3>
+                <p>
+                    This Operation will remove the update to the database make sure the categoty should correct.
+                </p>
+            </div>
+        </div>
+  </div>
+  <div id="middle">
+    <img src="./Images/sideimage4.jpg" />
+    <div id="input">
+      <a href="admin.html"><button style="margin-top: 30px">Add Product</button></a>
+      <a href="delete.html"><button>Delete Product</button></a>
+      <a href="update.html"><button>Update Product</button></a>
+      <div id="form">
+        <form>
+          <input type="text" id="ProductID" placeholder="Enter ProductID" />
+          <input type="text" id="Name" placeholder="Enter Name of Item" />
+          <input type="number" id="Price" placeholder="Enter Price" />
+          <input type="number" id="Category" placeholder="Enter Category" />
+          <input type="text" id="Image" placeholder="Enter Image URL" />
+          <p style="color: black; margin-top: 35px">
+            Note: Product details will get updated in the site, make sure
+            before updating details.
+          </p>
+          <input style="font-size: 18px; width: 94%" type="button" id="updateBtn" value="Update Product" />
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="copyright">
+    Copyright © 2014-2022 Green Basket. All Rights Reserved.
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#auto1", {
+      strings: ["Welcome Back !!"],
+      typeSpeed: 60,
+      backSpeed: 60,
+      loop: true,
+    });
+  </script>
+</body>
+
+</html>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  let updateBtn = document.getElementById("updateBtn");
+  updateBtn.addEventListener("click", async () => {
+    let ProductID = document.getElementById("ProductID").value;
+    let Name = document.getElementById("Name").value;
+    let Price = document.getElementById("Price").value;
+    let Category = document.getElementById("Category").value;
+    let Image = document.getElementById("Image").value;
+    let obj = { Name, Price, Category, Image };
+    await fetch(
+      `http://localhost:9168/admin/update/${ProductID}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(obj),
+      }).then((res) => {
+        return res.json()
+      }).then((data) => {
+        if (data.msg == "product updated") {
+          swal(
+            "Product Updated Successful",
+            "Done",
+            "success"
+          )
+        } else {
+          swal(
+            "Product ID Not Available",
+            "Please Check",
+            "error"
+          )
+        }
+      }).catch((err) => {
+        console.log(err)
+      });
+  });
+
+  let displaytotalcount = localStorage.getItem("totalcount") || 0;
+  document.querySelector("#total").innerText = displaytotalcount;
+  let displayupdatecount = localStorage.getItem("updatecount") || 0;
+  document.querySelector("#updated").innerText = displayupdatecount;
+  let displaypostcount = localStorage.getItem("postcount") || 0;
+  document.querySelector("#added").innerText = displaypostcount;
+  let displaycount = localStorage.getItem("deletecount") || 0;
+  document.querySelector("#removed").innerText = displaycount;
+
+</script>

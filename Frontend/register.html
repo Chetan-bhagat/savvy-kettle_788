@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gearbest: Affordable Quality, Fun</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+  <link rel="stylesheet" href="./Css/register.css" />
+</head>
+
+<body>
+  <div id="topLogo">
+    <a href="index.html"><img id="home" alt="logo" src="./Images/Green Basket.png" /></a>
+    <!-- <img src="./Images/navlogo.jpeg" alt="" id="icon" /> -->
+  </div>
+  <div id="signInBody">
+    <div id="links">
+      <div><a href="login.html">SIGN IN</a></div>
+      <div><a href="register.html">REGISTER</a></div>
+    </div>
+
+    <div id="formDiv">
+      <form id="form">
+        <input id="name" type="text" placeholder="Enter Your Name" required />
+        <input id="email" type="email" placeholder="Enter Your Email" required />
+        <input id="address" type="text" placeholder="Enter Your Address" required />
+        <input id="dob" type="date" placeholder="Date of Birth" required />
+        <input id="password" type="password" placeholder="Password" required />
+
+        <div id="checkbox">
+          <input id="check" type="checkbox" />
+          <p>
+            I agree to Green Basket Terms and Conditions and Privacy Policies.
+          </p>
+        </div>
+        <input class="button" type="submit" value="Register" />
+      </form>
+      <div id="viaGoogle">
+        <p>or conect Via</p>
+        <img
+          src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
+          alt="" />
+      </div>
+    </div>
+  </div>
+
+
+  <div id="copyright">
+    <p>Copyright © 2014-2023 Green Basket. All Rights Reserved.</p>
+  </div>
+  </div>
+</body>
+
+</html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  // *******************************REGISTER NEW USER********************************
+  document.querySelector("#form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    let Name = document.querySelector("#name").value;
+    let Email = document.querySelector("#email").value;
+    let Location = document.querySelector("#address").value;
+    let DOB = document.querySelector("#dob").value;
+    let Password = document.querySelector("#password").value;
+    if (Name != "" && Name != undefined && Email != "" && Email !== undefined && Password != "" && Password != undefined && DOB !== "" && DOB !== undefined && Password != undefined && Location !== "" && Location !== undefined) {
+      const payload = {
+        Name,
+        Email,
+        Location,
+        DOB,
+        Password,
+      };
+      // console.log(payload,"payload")
+      fetch("http://localhost:9168/sign/register", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+
+        },
+        body: JSON.stringify(payload)
+      }).then((res) => {
+        return res.json()
+      }).then((data) => {
+        if (data.msg == 'Email Already Exist') {
+          swal(
+            "Email Already Exist",
+            "Try with anther email",
+            "error"
+          )
+        } else {
+          swal(
+            "Registered Successful",
+            "Welcome",
+            "success"
+          )
+          setTimeout(function () {
+            window.location.href = "index.html";
+          }, 2000);
+        }
+      }).catch((err) => {
+        console.log("Error", err)
+      })
+
+    } else {
+      console.log("Enter Valid details")
+    }
+
+  });
+</script>
+
+<!-- "Name":String,
+    "Email":String ,
+    "Location":String,
+    "Pincode":Number,
+    "DOB": Number,
+    "Password -->
