@@ -15,7 +15,7 @@
     <a href="index.html"><img id="home" alt="logo" src="./Images/Green Basket.png" /></a>
   </div>
 
-  <div id="signInBody">
+    <div id="signInBody">
     <div id="links">
       <div><a href="login.html">SIGN IN</a></div>
       <div><a href="register.html">REGISTER</a></div>
@@ -24,7 +24,7 @@
       <form id="form">
         <input id="email" type="email" placeholder="Email" required />
         <input id="password" type="password" placeholder="Password" required />
-        <div id="checkbox">
+        <div id="check">
           <input id="check" type="checkbox" />
           <p>Keep me logged in</p>
           <a id="forget" href="">Forgot your password?</a>
@@ -81,7 +81,7 @@
         "success"
       )
       setTimeout(function () {
-        // window.location.href = "index.html";
+        window.location.href = "index.html";
       }, 2000);
           // window.location.href = "index.html"
         } else if (data.msg == "Invalid Password") {

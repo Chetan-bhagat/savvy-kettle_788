@@ -4,90 +4,7 @@
     /* font-weight: -200; */
     font-size: 30px;
 }
-#disc {
-    width: 90%;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 2px 15px 5px 15px;
-    margin-bottom: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-}
 
-.highligh {
-    
-    color: green;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#more {
-    display: none;
-}
-
-#footer {
-    width: 90%;
-    margin: auto;
-    background-color:white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#foot1 {
-    margin: auto;
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-}
-
-#foot1>div>p:hover {
-    color: green;
-}
-
-.green {
-    color: green;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-#foot2 {
-    margin: auto;
-    width: 85%;
-    margin-bottom: 30px;
-    display: flex;
-
-}
-
-.first {
-    width: 200px;
-}
-.sec{
-    margin-top: 50px;
-}
-.third{
-    margin-top: 30px;
-}
-.forth{
-    margin-top: 140px;
-}
-.second {
-    margin-left: 50px;
-    width: 900px;
-}
-.second  img{
-    width: 500px;
-}
-
-#copyright {
-    margin: auto;
-    text-align: center;
-    color: white;
-    font-weight: lighter;
-    font-size: small;
-    background-color: black;
-    margin-bottom: -10px;
-    padding: 0.05px;
-}
 #category{
     display: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -134,7 +51,7 @@ td{
     padding: 10px;
 }
 tr>th{
-    width: 150px;
+    width: 15.569%;
    text-align: left;
    padding-left: 20px;
 }
@@ -207,4 +124,30 @@ td>button{
     color: white;
     border: 0ch;
     border-radius: 5px;
+}
+
+
+
+@media (min-width: 425px) and (max-width: 825px) {
+    tr>td{
+        /* display: flex; */
+        font-size: 14px;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 0px) and (max-width: 424px) {
+    tr>th{
+        width: 100px;
+       padding-left: 5px;
+       font-size: 12px;
+    }
+
+    tr>th:nth-child(1){
+       padding-left: 2px;
+    }
+    tr>td{
+        /* display: flex; */
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
 }

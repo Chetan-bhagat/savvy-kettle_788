@@ -83,6 +83,7 @@
       }).then((res) => {
         return res.json()
       }).then((data) => {
+        console.log(data.msg)
         if (data.msg == 'Email Already Exist') {
           swal(
             "Email Already Exist",

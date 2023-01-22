@@ -10,7 +10,6 @@ app.use(express.json())
 afterloginrouter.get("/", async (req, res) => {
   try {
     const data = await Cartmodel.find();
-    // console.log("get",data)
     await res.send(data)
   } catch (err) {
     res.send({ "msg": "Something went wrong" })
@@ -20,7 +19,7 @@ afterloginrouter.get("/", async (req, res) => {
 //******************** Add to cart*******************
 afterloginrouter.post("/addtocart", async (req, res) => {
   let payload=req.body;
-  console.log(payload)
+  // console.log(payload)
   try {
     const data = await new Cartmodel(payload);
     data.save()

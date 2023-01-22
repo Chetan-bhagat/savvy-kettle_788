@@ -19,7 +19,18 @@
         <div id="nav1">
             <i><ion-icon name="call-outline"></ion-icon> 1800 123 1000</i>
             <i> <ion-icon name="location-outline"></ion-icon> Bangalore</i>
-            <i id="username"><a href="login.html"><ion-icon name="person-outline"></ion-icon> login/sign up</a></i>
+            <i id="username" onmouseover="logoutdis()"><a href="login.html"><ion-icon name="person-outline"></ion-icon>
+                    login/sign up</a></i>
+        </div>
+        <div id="log" onmouseover="logoutdis()" onmouseout="logoutremove()">
+
+            <div class="log">My Account</div>
+            <div class="log">My Basket</div>
+            <div class="log">My Order</div>
+            <div class="log">Wallet Rs 0.00</div>
+            <div class="log">Customer Service</div>
+            <div class="log" onclick="logout()"><a id="toggle" href="">Logout</a></div>
+
         </div>
         <div id="nav2">
             <a href="index.html"><img id=logo src="./Images/Green Basket.png"></a>
@@ -34,16 +45,30 @@
             </div>
 
         </div>
+
         <div>
-            <button class="innav" onmouseover="category()"  >SHOP BY CATEGORY &#8595 </button>
+            <button class="innav" onmouseover="category()">SHOP BY CATEGORY &#8595 </button>
             <button class="innav"><ion-icon id="tag" name="pricetags-sharp"></ion-icon>OFFERS</i></button>
         </div>
     </div>
-    <div id="category" onmouseover="category()" onmouseout="out()" >
+    <!-- **************TAB****************** -->
+    <div id="mediaqueryfortab">
+        <div><a href=""><i class="fa-solid fa-bars"></i></a><a href="login.html"><i class="fa-solid fa-user"></i></a>
+            <p id="Green"><a href="index.html">Green <spam id="Basket">Basket</a></spam>
+            </p><a href="#">
+                <i class="fa-solid fa-location-dot"></i></a><a href="cart.html"><i><i
+                        class="fa-sharp fa-solid fa-cart-shopping"></i></i></a>
+        </div>
+        <div ><input placeholder="Serch Your Product">
+            
+        </div>
+    </div>
+    <!-- **************TAB****************** -->
+    <div id="category" onmouseover="category()" onmouseout="out()">
         <div><a href="vegetables.html">Vegetables</a></div>
         <div><a href="Fruits.html">Fruits</a></div>
         <div><a href="foodgrain_oil.html">Foodgrains, Oil & Masala</a></div>
-        <div><a href="Badycare.html">Beverages</a></div>
+        <div><a href="Beverage.html">Beverages</a></div>
         <div><a href="Snack.html">Snacks & Branded Foods</a></div>
         <div><a href="Beauty.html">Beauty & Hygiene</a></div>
         <div><a href="Household.html">Cleaning & Household</a></div>
@@ -51,11 +76,9 @@
         <div><a href="Egg.html">Eggs, Meat & Fish</a></div>
         <div><a href="Badycare.html">Baby Care</a></div>
         <div><a href="index.html">View All</a></div>
-       
-
     </div>
     <div>
-        <img id="slidshow" src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_bcd_paneer_460px-020122.jpg">
+        <img id="slidshow" src="./Images/slidepanner.webp">
     </div>
     <div id="sliddetails">
         <section id="sliddetails1" class="slide">
@@ -80,7 +103,7 @@
         <div>
             <h1>EGGS, MEAT AND FISH</h1>
         </div>
-        <div><img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_251122_02.png"> </div>
+        <div><img src="./Images/banner.webp"> </div>
         <div>
             <h1>AYURVEDA</h1>
         </div>
@@ -96,27 +119,44 @@
     </div>
     <p class="heading1">My Smart Basket</p>
     <div id="renderdata">
-      
+
     </div>
+    <div id="bank">
+        <div><a href="Beverage.html"><img src="./Images/offer1.webp"></a></div>
+        <div><a href="Beauty.html"><img class="final" src="./Images/offer2.webp"></a><a href="Kitchen.html"><img
+                    class="final" src="./Images/offer3.webp"></a><a href="Beverage.html"><img
+                    src="./Images/offer4.webp"></a><a href="Beauty.html"><img class="final"
+                    src="./Images/offer5.webp"></a></div>
+    </div>
+    <p class="heading1">Best Sellers</p>
+    <div id="renderdata2">
+
+    </div>
+    <p class="heading1">Home & Kitchen Essentials</p>
+    <div id="bank2"><a href="Kitchen.html"><img src="./Images/Kitchen1.webp"></a><a href="Kitchen.html"><img
+                src="./Images/Kitchen2.webp"></a><a href="Kitchen.html"><img src="./Images/Kitchen3.webp"></a><a
+            href="Kitchen.html"><img src="./Images/Kitchen4.webp"></a><a href="Kitchen.html"><img
+                src="./Images/Kitchen5.webp"></a></div>
     <p class="heading1">Brand Store</p>
+
     <div id="brandstore">
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_01.jpg">
+                src="./Images/amul.webp">
         </div>
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_02.jpg">
+                src="./Images/detol.webp">
         </div>
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_03.jpg">
+                src="./Images/cococola.webp">
         </div>
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_04.jpg">
+                src="./Images/loreal.webp">
         </div>
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_05.jpg">
+                src="./Images/indiagate.webp">
         </div>
         <div><img
-                src="https://www.bigbasket.com/media/customPage/77880b23-0233-4fad-b54a-a93c998e0d20/7b298a48-7c3d-4120-a032-4d45c2a89673/14d11349-1c62-4803-be77-15a874fe6a4b/hp_brandStorefront_m_480_251222_06.jpg">
+                src="./Images/durex.webp">
         </div>
     </div>
     <div id="disc">

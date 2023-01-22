@@ -19,9 +19,10 @@
 #sliddetails>section {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
-    border-bottom: 5px solid rgb(76, 142, 43);
     opacity: 0.5;
     height: 78px;
+    border-bottom: 5px solid rgb(76, 142, 43);
+
 }
 
 #middivs {
@@ -68,7 +69,8 @@
     margin-top: 40px;
 }
 
-#renderdata {
+#renderdata,
+#renderdata2 {
     margin: auto;
     width: 90%;
     display: grid;
@@ -80,12 +82,14 @@
     margin-bottom: 40px;
 }
 
-#renderdata>div {
+#renderdata>div,
+#renderdata2>div {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px
 }
 
-#renderdata>div>img {
+#renderdata>div>img,
+#renderdata2>div>img {
     width: 85%;
     margin: auto;
 }
@@ -150,6 +154,7 @@
     gap: 15px;
     margin-bottom: 30px;
 }
+
 #brandstore>div {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -163,106 +168,384 @@
     height: 100%;
 }
 
-#disc {
-    width: 90%;
-    margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 2px 15px 5px 15px;
-    margin-bottom: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-}
 
-.highligh {
-    color: green;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#more {
-    display: none;
-}
-
-#footer {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#foot1 {
-    margin: auto;
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-}
-
-#foot1>div>p:hover {
-    color: green;
-}
-
-.green {
-    color: green;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-#foot2 {
-    margin: auto;
-    width: 85%;
-    margin-bottom: 30px;
-    display: flex;
-
-}
-
-.first {
-    width: 200px;
-}
-.sec{
-    margin-top: 50px;
-}
-.third{
-    margin-top: 30px;
-}
-.forth{
-    margin-top: 140px;
-}
-.second {
-    margin-left: 50px;
-    width: 900px;
-}
-.second  img{
-    width: 500px;
-}
-
-#copyright {
-    margin: auto;
-    text-align: center;
-    color: white;
-    font-weight: lighter;
-    font-size: small;
-    background-color: black;
-    margin-bottom: -10px;
-    padding: 0.05px;
-}
-#category{
+#category {
     display: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     width: 300px;
     margin-left: 50px;
     margin-bottom: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: fixed;
-    
+    position: absolute;
+
+
 }
-#category>div{
+
+#category>div {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     padding: 8px;
     background-color: white;
-   
+
 }
-#category>div:hover{
+
+#category>div:hover {
     background-color: rgb(222, 216, 216);
 
 }
-#category>div>a{
+
+#category>div>a {
     text-decoration: none;
     color: black;
+}
+
+#bank,
+#bank2 {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+
+}
+
+#bank>div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#bank img {
+    margin: 3px;
+}
+
+.final {
+    width: 270px;
+    height: 180px;
+}
+
+#bank2 img {
+    width: 220px;
+    margin: 3px;
+}
+
+;
+
+#log>div:hover {}
+
+#navbar>#log {
+    display: none;
+    width: 12%;
+    margin-left: 1030px;
+    /* border: 2px solid red; */
+    padding-bottom: 30px;
+    position: absolute;
+}
+
+#navbar>#log>div {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 4px;
+    background-color: white;
+}
+
+#navbar>#log>div:hover {
+    background-color: rgb(223, 214, 214);
+
+}
+
+#toggle {
+    text-decoration: none;
+    color: black;
+}
+
+#middivs>div:nth-child(2) {
+    background-color: white;
+}
+
+
+@media (min-width: 425px) and (max-width: 825px) {
+    a {
+        text-decoration: none;
+    }
+
+    #mediaqueryfortab input {
+        width: 100%;
+        height: 35px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    #sliddetails {
+        display: none;
+    }
+
+    #middivs {
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #middivs>div {
+        border-radius: 5px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    #middivs>div>h1 {
+        font-size: 14px;
+
+    }
+
+    #middivs>div:nth-child(4),
+    #middivs>div:nth-child(5),
+    #middivs>div:nth-child(6) {
+        display: none;
+    }
+
+    #renderdata>div:nth-child(5) {
+        display: none;
+    }
+
+    #renderdata,
+    #renderdata2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: auto;
+    }
+
+    #renderdata>div,
+    #renderdata2>div {
+        padding: 15px
+    }
+
+    #renderdata>div>img,
+    #renderdata2>div>img {
+        width: 65%;
+        height: 45%;
+
+    }
+
+    #bank {
+        margin-top: 20px;
+    }
+
+    #bank>div:nth-child(1) {
+        display: none;
+    }
+
+    #bank>div:nth-child(2) {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #bank>div:nth-child(2)>a>img {
+        width: 97%;
+        height: 98%;
+        margin-top: 10px;
+    }
+
+    #bank2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    #bank2>a:nth-child(5) {
+        display: none;
+
+    }
+
+    #bank2 img {
+        width: 98%;
+        height: 90%;
+    }
+
+    #brandstore {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    /* #footer {
+    border: 2px solid firebrick;
+} */
+
+    
+    
+}
+
+@media (min-width: 0px) and (max-width: 424px) {
+    a {
+        text-decoration: none;
+    }
+
+    #mediaqueryfortab input {
+        width: 100%;
+        height: 35px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    #sliddetails {
+        display: none;
+    }
+
+    #middivs {
+        justify-content: space-between;
+        grid-template-columns: repeat(2 , 1fr);
+    }
+
+    #middivs>div {
+        border-radius: 5px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    #middivs>div>h1 {
+        font-size: 14px;
+
+    }
+    #middivs>div:nth-child(3),
+    #middivs>div:nth-child(4),
+    #middivs>div:nth-child(5),
+    #middivs>div:nth-child(6) {
+        display: none;
+    }
+
+    #renderdata>div:nth-child(5) {
+        display: none;
+    }
+
+    #renderdata,
+    #renderdata2 {
+       display: flex;
+       flex-wrap: wrap;
+        margin: auto;
+    }
+
+    #renderdata>div,
+    #renderdata2>div {
+        padding: 10px;
+        width: 40%;
+
+    }
+
+    #renderdata>div>img,
+    #renderdata2>div>img {
+        width: 65%;
+        height: 45%;
+
+    }
+
+    #bank {
+        margin-top: 20px;
+    }
+
+    #bank>div:nth-child(1) {
+        display: none;
+    }
+
+    #bank>div:nth-child(2) {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #bank>div:nth-child(2)>a>img {
+        width: 97%;
+        height: 98%;
+        margin-top: 10px;
+    }
+
+    #bank2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    #bank2>a:nth-child(5) {
+        display: none;
+
+    }
+
+    #bank2 img {
+        width: 98%;
+        height: 90%;
+    }
+
+    #brandstore {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    /* #footer {
+    border: 2px solid firebrick;
+} */
+
+    #foot1 {
+        width: 100%;
+    }
+
+    #foot2 {
+        width: 100%;
+
+    }
+
+    .sec {
+        margin-top: 60px;
+    }
+
+    .third {
+        margin-top: 60px;
+    }
+
+    .forth {
+        margin-top: 350px;
+    }
+
+    .second {
+        margin-left: 50px;
+        width: 900px;
+
+    }
+
+    .second img {
+        width: 80%;
+    }
+
+    .render1 {
+        margin-top: -20px;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 5px;
+        
+    }
+    
+    .render2 {
+        width: 100%;
+    
+    }
+    
+    .render2>i {
+        font-size: 10px;
+    }
+    
+    .render2>button {
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .category {
+        color: rgb(112, 105, 105);
+        font-size: 15px;
+        margin-top: -16px;
+    }
+   #slidshow{
+    width: 105%;
+    height: 120%;
+   }
 }

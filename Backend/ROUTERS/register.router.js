@@ -34,9 +34,9 @@ registerrouter.post("/register",async(req,res)=>{
                     payload.Password=hash;
                     const data= await new registermodel(payload);
                     await data.save()
-                    const allregister= await registermodel.find();
-                    console.log("NEW REGISTRATION SUCCESSFUL")
-                    await res.send(allregister);
+                    // const allregister= await registermodel.find();
+                    // console.log("NEW REGISTRATION SUCCESSFUL")
+                    res.send({"msg":"NEW REGISTRATION SUCCESSFUL"});
                    }else{
                     res.send("ERROR WHILE HASHING")
                    }

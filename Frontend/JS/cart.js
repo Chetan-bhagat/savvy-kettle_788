@@ -1,19 +1,25 @@
 render();
-if (localStorage.getItem("username") !== undefined && localStorage.getItem("username") !== null) {
+if (localStorage.getItem("username") !== "undefined" && localStorage.getItem("username") !== null) {
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
+}else{
+    document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon>login/signup</a>`
 }
 async function render() {
     await fetch("http://localhost:9168/cart").
         then((res) => {
             return res.json();
         }). then((data) => {
-            // console.log(data)
             let d = data.filter((item) => {
                 return item.UserID == localStorage.getItem("userid")
             })
-
-            document.querySelector("#countin").innerHTML = data.length + 1;
-            document.querySelector("#countinin").innerHTML = data.length + 1;
+               
+           if(localStorage.getItem("username")!=="undefined"){
+            document.querySelector("#countin").innerHTML = d.length ;
+            document.querySelector("#countinin").innerHTML = d.length ;
+           }else{
+            document.querySelector("#countin").innerHTML = 0 ;
+            document.querySelector("#countinin").innerHTML = 0;
+           }
             renderdall(d)
         }).catch((err) => {
             console.log(err)
