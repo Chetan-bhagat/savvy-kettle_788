@@ -1,4 +1,4 @@
-let arr = ["https://www.bigbasket.com/media/uploads/banner_images/hp_m_bcd_paneer_460px-020122.jpg", "https://www.bigbasket.com/media/uploads/banner_images/hp_m_cmc_breakfast_460px-020122.jpg", "https://www.bigbasket.com/media/uploads/banner_images/hp_wedding-brida_EP_1600x460px-020122.jpg", "https://www.bigbasket.com/media/uploads/banner_images/HP_EMF_M_WeekdayBangalore-1600x460-160123.jpeg",]
+let arr = ["./Images/slidepanner.webp", "./Images/slidebreakfast.webp", "./Images/slidebride.webp", "./Images/slidemeat.webp",]
 let slide = document.querySelector("#slidshow");
 let sliddetails1 = document.querySelector("#sliddetails1");
 let sliddetails2 = document.querySelector("#sliddetails2");
@@ -22,30 +22,66 @@ let timer = setInterval(() => {
 
 
 }, 2000);
-if (localStorage.getItem("username") !== undefined && localStorage.getItem("username") !== null) {
+if (localStorage.getItem("username") ==="undefined") {
+    console.log("intari",localStorage.getItem("username"))
+    document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> login/signup</a>`
+}else{
+    console.log("in",localStorage.getItem("username"))
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
+    
 }
 // ***********RENDERDATA*********
-let temp = []
+let temp = [];
 render()
 async function render() {
     await fetch("http://localhost:9168/products").
         then((res) => {
             return res.json()
         }).then((data) => {
-            temp = data
-            alldata(data)
+            temp = data;
+            let limit=data.filter((item,index)=>{
+                return index<5
+            });
+            let remain=data.filter((item,index)=>{
+                return index>5 && index<21
+            });
+            allremaindata(remain)
+            alldata(limit)
         });
 
    await fetch("http://localhost:9168/cart").
         then((res) => {
             return res.json();
         }).then((data) => {
-            document.querySelector("#count").innerHTML=data.length+1
+            let count=data.filter((item)=>{
+                return item.UserID==localStorage.getItem("userid")
+            });
+            // console.log(count)
+           if(localStorage.getItem("username")=="undefined" || localStorage.getItem("username")==null){
+            document.querySelector("#count").innerHTML=0
+           }else{
+            document.querySelector("#count").innerHTML=count.length
+           }
         }).catch((err)=>{
             console.log(err)
         })
 };
+function allremaindata(data) {
+    // console.log(data)
+    let D = data.map((item,index) => {
+        return `<div id="item"><img src="${item.Image}">
+        <h4>${item.Name}</h4>
+        <p class="category">${item.Category}</p>
+        <div class="render1"> <p id="markprice">MRP <spam class="mrp" >Rs. ${String(Math.floor(Number(item.Price) * 1.3))}</spam></p>
+        <p class="price">Rs. ${item.Price}</p>
+        </div>
+        <div class="render2"> <i class="fa-solid fa-truck"><spam id="delivery">Standard Delivery in 48 hrs</spam></i> 
+        <button _data1="${item.Name}" _data2="${item.Category}" _data3="${item.Price}" _data4="${item.Image}" onclick="addtocart(event)">Add <i class="fa-sharp fa-solid fa-cart-plus"></i></button></div>
+        </div>
+       `
+    });
+    document.querySelector("#renderdata2").innerHTML = D.join(" ");
+}
 function alldata(data) {
     // console.log(data)
     let D = data.map((item,index) => {
@@ -56,7 +92,7 @@ function alldata(data) {
         <p class="price">Rs. ${item.Price}</p>
         </div>
         <div class="render2"> <i class="fa-solid fa-truck"><spam id="delivery">Standard Delivery in 48 hrs</spam></i> 
-        <button _data="${index}" onclick="addtocart(event)">Add <i class="fa-sharp fa-solid fa-cart-plus"></i></button></div>
+        <button _data1="${item.Name}" _data2="${item.Category}" _data3="${item.Price}" _data4="${item.Image}" onclick="addtocart(event)">Add <i class="fa-sharp fa-solid fa-cart-plus"></i></button></div>
         </div>
        `
     });
@@ -104,13 +140,12 @@ input.addEventListener("input", () => {
 });
 
 async function addtocart(event) {
-    let index=+event.target.attributes[0].nodeValue
-    // console.log(index,event)
-    let Image=event.target.offsetParent.children[6].children[index].children[0].currentSrc;
-    let Name=event.target.offsetParent.children[6].children[index].children[1].innerHTML;
-    let Category=event.target.offsetParent.children[6].children[index].children[2].innerHTML;
-    let arr=(event.target.offsetParent.children[6].children[index].children[3].children[1].innerHTML).match(/(\d+)/);
-    let Price=arr[0]
+    console.log(event)
+    let Image=event.target.attributes[3].nodeValue;
+    let Name=event.target.attributes[0].nodeValue;
+    let Category=event.target.attributes[1].nodeValue;
+    let Price=event.target.attributes[2].nodeValue;
+
    let payload={
     Name,
     Image,
@@ -118,6 +153,7 @@ async function addtocart(event) {
     Price
 
    };
+//    console.log(payload,event)
 //    console.log(payload)
     if (localStorage.getItem("username") == null || localStorage.getItem("username") == undefined) {
         alert("Login First Please");
@@ -155,8 +191,23 @@ async function addtocart(event) {
 
 
 function cart(){
-    if(localStorage.getItem("username") == null || localStorage.getItem("username") == undefined){
+    if(localStorage.getItem("username") == null || localStorage.getItem("username") == "undefined"){
         alert("Login First")
-    };
-    window.location.href="./cart.html"
+    }else{
+        // window.location.href="./cart.html"
+
+    }
+};
+
+function logout(){
+    localStorage.setItem("token",undefined);
+    localStorage.setItem("username",undefined);
+    location.reload();
+}
+function logoutdis(){
+  document.querySelector("#navbar>#log").style.display="block"
+ 
+}
+function logoutremove(){
+    document.querySelector("#navbar>#log").style.display="none"
 }
