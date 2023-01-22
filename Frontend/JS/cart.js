@@ -4,6 +4,7 @@ if (localStorage.getItem("username") !== "undefined" && localStorage.getItem("us
 }else{
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon>login/signup</a>`
 }
+let temp=[]
 async function render() {
     await fetch("http://localhost:9168/cart").
         then((res) => {
@@ -12,7 +13,7 @@ async function render() {
             let d = data.filter((item) => {
                 return item.UserID == localStorage.getItem("userid")
             })
-               
+            temp=d;
            if(localStorage.getItem("username")!=="undefined"){
             document.querySelector("#countin").innerHTML = d.length ;
             document.querySelector("#countinin").innerHTML = d.length ;
@@ -40,7 +41,7 @@ function renderdall(data) {
     <td style="width:400px">${item.Name} <spam id="categorytable">( ${item.Category.toLowerCase()} )</spam> </td>
     <td style="width:160px">Rs. ${item.Price} <spam id="undeline" >Mrp. ${Math.floor(1.3*Number(item.Price))}</spam></td>
     <td style="width:160px"><button id="add" _data=${index} onclick="add(event)">+</button><spam id="qty"> ${arrofqty[index]} </spam><button  onclick="minus(event)" _da=${index} id="minus">-</button> </td>
-    <td style="width:160px" class="sub">${item.Price} .Rs  ✖️</td>
+    <td style="width:160px" class="sub">${item.Price} .Rs  <button _data=${index} onClick="deletes(event)"> ✖️ </button></td>
     <td style="width:160px" id="red">${Math.floor(1.3*Number(item.Price)-Number(item.Price))} .Rs</td>
   </tr>
 `
@@ -49,7 +50,6 @@ function renderdall(data) {
     for( let i=0;i<arrofprice.length;i++){
         total+=arrofprice[i];
     };
-    // console.log(arrofprice,total);
     document.querySelector("#total1").innerHTML=total+ " .Rs";
     document.querySelector("#total2").innerHTML=total +" .Rs"
 };
@@ -97,4 +97,12 @@ function minus(event){
     document.querySelector("#total2").innerHTML=total +" .Rs"
     
 }
-
+function deletes(event){
+    let index=+event.target.attributes[0].nodeValue;
+    // console.log(arrofprice)
+    temp.splice(index,1);
+    arrofprice.splice(index,1)
+    arrofprice=[];
+    total=0
+    renderdall(temp)
+}

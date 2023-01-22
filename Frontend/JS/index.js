@@ -6,7 +6,6 @@ let sliddetails3 = document.querySelector("#sliddetails3");
 let sliddetails4 = document.querySelector("#sliddetails4");
 let arrdeatils = [sliddetails1, sliddetails2, sliddetails3, sliddetails4];
 
-
 let i = 0;
 let timer = setInterval(() => {
     // console.log(i,arr.length)
@@ -113,8 +112,28 @@ let input = document.querySelector("#nav2>div>input");
 let obtract = document.querySelector("#slidshow");
 let obstract2 = document.querySelector("#sliddetails");
 let obstract3 = document.querySelector("#middivs");
+let input2 = document.querySelector("#mediaqueryfortab>div>input");
 
-// console.log(input.value)
+input2.addEventListener("input", () => {
+    
+    let pass = temp.filter((item) => {
+        return item.Name.toLowerCase().includes(input2.value.toLowerCase())
+    });
+
+    console.log(input2.value);
+    if (pass.length == 0) {
+        document.querySelector("#renderdata").innerHTML = "Nothing Found"
+
+
+    } else if (input.value == "") {
+        obtract.style.display = "block"
+        obstract2.style.display = ""
+        obstract3.style.display = ""
+        alldata(pass)
+    } else {
+        alldata(pass)
+    }
+});
 input.addEventListener("input", () => {
     obtract.style.display = "none"
     obstract2.style.display = "none"
@@ -194,7 +213,7 @@ function cart(){
     if(localStorage.getItem("username") == null || localStorage.getItem("username") == "undefined"){
         alert("Login First")
     }else{
-        // window.location.href="./cart.html"
+        window.location.href="./cart.html"
 
     }
 };

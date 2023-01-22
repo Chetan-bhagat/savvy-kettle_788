@@ -32,12 +32,8 @@
                     <spam id="countin">0</spam> Items</pre>
                 </div>
             </div>
-
         </div>
-        <!-- <div>
-            <button class="innav" onmouseover="category()">SHOP BY CATEGORY &#8595 </button>
-            <button class="innav"><ion-icon id="tag" name="pricetags-sharp"></ion-icon>OFFERS</i></button>
-        </div> -->
+
     </div>
     <div id="mediaqueryfortab">
         <div><a href=""><i class="fa-solid fa-bars"></i></a><a href="login.html"><i class="fa-solid fa-user"></i></a>
@@ -100,7 +96,7 @@
                     <p id="total2">Rs. 0</p>
                 </div>
                 <div><p> For this order: Accepted food coupon</p>
-                    <button> <h3>Checkout >></h3></button></div>
+                    <button> <spam id="auto1"></spam></button></div>
             </div>
         </div>
     </div>
@@ -187,4 +183,15 @@
 
 </html>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12">
+
+</script>
+<script>
+    var typed= new Typed("#auto1",{
+        strings : ["Checkout >>"],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true
+    })
+</script>
 <script src="./JS/cart.js"></script>
