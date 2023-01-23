@@ -33,7 +33,7 @@ if (localStorage.getItem("username") ==="undefined") {
 let temp = [];
 render()
 async function render() {
-    await fetch("http://localhost:9168/products").
+    await fetch("https://drab-ruby-gecko-suit.cyclic.app/products").
         then((res) => {
             return res.json()
         }).then((data) => {
@@ -48,7 +48,7 @@ async function render() {
             alldata(limit)
         });
 
-   await fetch("http://localhost:9168/cart").
+   await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
         then((res) => {
             return res.json();
         }).then((data) => {
@@ -178,7 +178,7 @@ async function addtocart(event) {
         alert("Login First Please");
         return
     };
-    await fetch("http://localhost:9168/cart/addtocart", {
+    await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart/addtocart", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ if (localStorage.getItem("username") !== "undefined" && localStorage.getItem("us
 }
 let temp=[]
 async function render() {
-    await fetch("http://localhost:9168/cart").
+    await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
         then((res) => {
             return res.json();
         }). then((data) => {

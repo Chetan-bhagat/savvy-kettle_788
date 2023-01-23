@@ -238,7 +238,7 @@
 
 render()
 async function render() {
-   await fetch("http://localhost:9168/products/Fruits").
+   await fetch("https://drab-ruby-gecko-suit.cyclic.app/products/Fruits").
     then((res) => {
         return res.json()
     }).then((data) => {
@@ -266,7 +266,7 @@ function alldata(data){
     // *****************Common************
     count();
     async function count() {
-        await fetch("http://localhost:9168/cart").
+        await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
             then((res) => {
                 return res.json();
             }).then((data) => {

@@ -251,7 +251,7 @@
    let temp=[]
     render()
     async function render() {
-        await fetch("http://localhost:9168/products/vegetables").
+        await fetch("https://drab-ruby-gecko-suit.cyclic.app/products/vegetables").
             then((res) => {
                 return res.json()
             }).then((data) => {
@@ -278,7 +278,7 @@
     // *****************Common************
     count();
     async function count() {
-        await fetch("http://localhost:9168/cart").
+        await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
             then((res) => {
                 return res.json();
             }).then((data) => {
