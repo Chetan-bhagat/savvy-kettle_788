@@ -27,7 +27,7 @@
                 <div><ion-icon id="search" name="search-outline"></ion-icon></div>
             </div>
             <div>
-                <a href=""><img src="./Images/cartimage.png"></a>
+                <a onclick="cart()" href="#"><img src="./Images/cartimage.png"></a>
                 <div> My Basket <br>
                     <spam id="count">0</spam> Items</pre>
                 </div>
@@ -230,6 +230,7 @@
 </html>
 <script src="./JS/common.js"></script>
 <script >
+    let temp=[]
     if (localStorage.getItem("username") !== undefined && localStorage.getItem("username") !== null) {
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
 }
@@ -241,6 +242,7 @@ async function render() {
     then((res) => {
         return res.json()
     }).then((data) => {
+        temp=data;
       alldata(data)
     })
 };
@@ -260,5 +262,57 @@ function alldata(data){
     });
     document.querySelector("#renderdata").innerHTML=D.join(" ");
 }
+
+    // *****************Common************
+    count();
+    async function count() {
+        await fetch("http://localhost:9168/cart").
+            then((res) => {
+                return res.json();
+            }).then((data) => {
+                let count = data.filter((item) => {
+                    return item.UserID == localStorage.getItem("userid")
+                });
+                // console.log(count)
+                if (localStorage.getItem("username") == "undefined" || localStorage.getItem("username") == null) {
+                    document.querySelector("#count").innerHTML = 0
+                } else {
+                    document.querySelector("#count").innerHTML = count.length
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+    }
+    if (localStorage.getItem("username") === "undefined") {
+        console.log("intari", localStorage.getItem("username"))
+        document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> login/signup</a>`
+    } else {
+        console.log("in", localStorage.getItem("username"))
+        document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
+
+    };
+
+    let input = document.querySelector("#nav2>div>input");
+    let obstrction=document.querySelector("#categoryimages")
+    input.addEventListener("input", () => {
+   obstrction.style.display="none"
+        let pass = temp.filter((item) => {
+            return item.Name.toLowerCase().includes(input.value.toLowerCase())
+        });
+
+        // console.log(input.value)
+     if (pass.length == 0) {
+            alldata(pass)
+            document.querySelector("#renderdata").innerHTML = "Nothing Found"
+
+        } else if (input.value == "") {
+            alldata(pass);
+            obstrction.style.display=""
+        } else {
+            alldata(pass)
+        }
+    });
+
+// **********************common**************
 
 </script>

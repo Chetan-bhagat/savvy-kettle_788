@@ -28,7 +28,7 @@
                 <div><ion-icon id="search" name="search-outline"></ion-icon></div>
             </div>
             <div>
-                <a href=""><img src="./Images/cartimage.png"></a>
+                <a onclick="cart()" href="#"><img src="./Images/cartimage.png"></a>
                 <div> My Basket <br>
                     <spam id="count">0</spam> Items</pre>
                 </div>
@@ -235,13 +235,14 @@
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
 }
 // ***********RENDERDATA*********
-
+let temp=[]
 render()
 async function render() {
    await fetch("http://localhost:9168/products/Eggs").
     then((res) => {
         return res.json()
     }).then((data) => {
+        temp=data
       alldata(data)
     })
 };

@@ -151,3 +151,10 @@ td>button{
         flex-wrap: wrap;
     }
 }
+#auto1{
+    font-size: 20px;
+    font-weight: 700;
+}
+#checkout>div>button{
+    width: 125px;
+}
