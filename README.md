@@ -1,7 +1,7 @@
 <h1 align="center"> Green Basket </h1>
 <h2 align="center">It's E-commerce web application with all the major functionalities. </h2>
 <p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
-<img width="800" height:"300" alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
+<img width="800" heigth:"500" align="center" alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
 <h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
 <div display:"flex" align="center">
