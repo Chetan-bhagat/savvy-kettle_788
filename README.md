@@ -1,9 +1,9 @@
 <h1 align="center"> Green Basket </h1>
 <h2 align="center">It's E-commerce web application with all the major functionalities. </h2>
 <br>
-<p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
+<p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items. In green Basket you can get the different groceries item by categories as well as you can search in the search bar. I have added the admin section which will managa the products in the web site by different CRUD operations.
+</p>
 <br>
-<img align="center" width="800" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
 <h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
 <div display:"flex" align="center">
@@ -19,8 +19,11 @@
 <img src="https://camo.githubusercontent.com/92407fc26e09271d8137b8aaf1585b266f04046b96f1564dfe5a69f146e21301/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a57542d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4a534f4e253230776562253230746f6b656e73266c6f676f436f6c6f723d7768697465">
 </div>
 <br>
-<p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items. In green Basket you can get the different groceries item by categories as well as you can search in the search bar. I have added the admin section which will managa the products in the web site by different CRUD operations.
-</p>
+<p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
+<br>
+<img align="center" width="800" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
+
+<br>
 <h3>✨Content & Features: </h3>
 <ul>
   <li> Creative Landing Page </li>
