@@ -1,8 +1,8 @@
 <h1 align="center"> Green Basket </h1>
 <h2 align="center">It's E-commerce web application with all the major functionalities. </h2>
 <p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
-<img width="900" height:"400" alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
-<h3 style="color: red"> Tech Stack</h3>
+<img width="800" height:"300" alt="project3" src="https://user-images.githubusercontent.com/113410376/214221931-369db1d6-716f-4304-8ddc-a41f33875b35.png">
+<h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
 <div display:"flex" align="center">
 <img src="https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465">
@@ -19,3 +19,17 @@
 <br>
 <p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items. In green Basket you can get the different groceries item by categories as well as you can search in the search bar. I have added the admin section which will managa the products in the web site by different CRUD operations.
 </p>
+<h3>✨Content & Features: </h3>
+<ul>
+  <li> Creative Landing Page <li>
+  <li> Login/Signup for users <li>
+  <li> Hasing the password of users and JWT Authentication<li>
+  <li> Admin Page/Administration Page <li>
+  <li>Fetch by Categories feature<li>
+  <li>Search the products feature<li>
+  <li> add to cart & delete to cart feature <li>
+  <li> Responsiveness for different device<li>
+</ul> 
+<h3 align="center"> LAyout of the website</h3>
+<img src="">
+
