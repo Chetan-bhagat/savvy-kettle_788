@@ -1,7 +1,7 @@
 <h1 align="center"> Green Basket </h1>
 <h2 align="center">It's E-commerce web application with all the major functionalities. </h2>
 <br>
-<p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items. In green Basket you can get the different groceries item by categories as well as you can search in the search bar. I have added the admin section which will managa the products in the web site by different CRUD operations.
+<p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items.In green Basket you can find the different groceries item by categories as well also you can search the product in search bar. I have added the admin section which will manage the products in the website by different CRUD operations.
 </p>
 <h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
