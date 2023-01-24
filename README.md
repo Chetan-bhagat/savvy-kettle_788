@@ -36,7 +36,6 @@
 </ul> 
 <h3 align="center"> Layout of the Website</h3>
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/214280786-77c1bafb-5b53-4fe6-b403-421b29660cc1.png">
-<br>
 <h3>Contact ✉️</h3>
 <p> Connect with me over socail media </p>
 <div display:"flex">
