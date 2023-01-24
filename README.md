@@ -21,14 +21,14 @@
 </p>
 <h3>✨Content & Features: </h3>
 <ul>
-  <li> Creative Landing Page <li>
-  <li> Login/Signup for users <li>
-  <li> Hasing the password of users and JWT Authentication<li>
-  <li> Admin Page/Administration Page <li>
-  <li>Fetch by Categories feature<li>
-  <li>Search the products feature<li>
-  <li> add to cart & delete to cart feature <li>
-  <li> Responsiveness for different device<li>
+  <li> Creative Landing Page </li>
+  <li> Login/Signup for users </li>
+  <li> Hasing the password of users and JWT Authentication</li>
+  <li> Admin Page/Administration Page </li>
+  <li>Fetch by Categories feature</li>
+  <li>Search the products feature</li>
+  <li> add to cart & delete to cart feature </li>
+  <li> Responsiveness for different device</li>
 </ul> 
 <h3 align="center"> LAyout of the website</h3>
 <img src="">
