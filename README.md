@@ -3,7 +3,6 @@
 <br>
 <p>Green Basket is the clone of the bigbasket which is the e-commerce popular for groceries items. In green Basket you can get the different groceries item by categories as well as you can search in the search bar. I have added the admin section which will managa the products in the web site by different CRUD operations.
 </p>
-<br>
 <h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
 <div display:"flex" align="center">
