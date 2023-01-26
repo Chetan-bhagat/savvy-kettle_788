@@ -252,6 +252,7 @@ margin-left: 20px;
     margin-bottom: -10px;
     padding: 0.05px;
 }
+/* **********************CATEGORY*************** */
 #category{
     display: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -276,3 +277,33 @@ margin-left: 20px;
     text-decoration: none;
     color: black;
 }
+/* **********************CATEGORY*************** */
+
+/* ***********LOgin Hover*********** */
+#navbar>#log {
+    display: none;
+    width: 12%;
+    margin-left: 1030px;
+    /* border: 2px solid red; */
+    padding-bottom: 30px;
+    position: absolute;
+}
+
+#navbar>#log>div {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 4.5px;
+    background-color: white;
+    /* padding: 0px 8px 0 3px; */
+
+}
+
+#navbar>#log>div:hover {
+    background-color: rgb(223, 214, 214);
+
+}
+
+#toggle {
+    text-decoration: none;
+    color: black;
+}
+/* *****************END*********************** */

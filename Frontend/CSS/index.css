@@ -1,3 +1,11 @@
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url("https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif")
+    no-repeat center;
+    z-index: 999999;
+}
 #slidshow {
     /* margin-top: 20px; */
     width: 100%;
@@ -95,19 +103,20 @@
 }
 
 .render1 {
-    width: 80%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
-    margin-top: -12px;
+    margin-top: -15px;
 }
 
 #markprice {
     color: grey;
+    font-size: 14px;
 }
 
 .category {
     color: rgb(112, 105, 105);
-    font-size: 15px;
+    font-size: 14px;
     margin-top: -12px;
 }
 
@@ -226,41 +235,16 @@
     margin: 3px;
 }
 
-;
-
-#log>div:hover {}
-
-#navbar>#log {
-    display: none;
-    width: 12%;
-    margin-left: 1030px;
-    /* border: 2px solid red; */
-    padding-bottom: 30px;
-    position: absolute;
-}
-
-#navbar>#log>div {
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 4px;
-    background-color: white;
-}
-
-#navbar>#log>div:hover {
-    background-color: rgb(223, 214, 214);
-
-}
-
-#toggle {
-    text-decoration: none;
-    color: black;
-}
 
 #middivs>div:nth-child(2) {
     background-color: white;
 }
 
+.mediaquery1 {
+    display: none;
+}
 
-@media (min-width: 425px) and (max-width: 825px) {
+@media (min-width: 440px) and (max-width: 825px) {
     a {
         text-decoration: none;
     }
@@ -370,46 +354,28 @@
     border: 2px solid firebrick;
 } */
 
-    
-    
+
+
 }
 
-@media (min-width: 0px) and (max-width: 424px) {
-    a {
-        text-decoration: none;
-    }
+@media (min-width: 0px) and (max-width: 440px) {
 
-    #mediaqueryfortab input {
-        width: 100%;
-        height: 35px;
-        margin-bottom: 5px;
-        margin-top: 5px;
-    }
 
     #sliddetails {
         display: none;
     }
 
     #middivs {
-        justify-content: space-between;
-        grid-template-columns: repeat(2 , 1fr);
-    }
-
-    #middivs>div {
-        border-radius: 5px;
-        margin-top: 20px;
-        align-items: center;
-    }
-
-    #middivs>div>h1 {
-        font-size: 14px;
-
-    }
-    #middivs>div:nth-child(3),
-    #middivs>div:nth-child(4),
-    #middivs>div:nth-child(5),
-    #middivs>div:nth-child(6) {
         display: none;
+    }
+
+    .heading1 {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 550;
+        color: rgb(79, 83, 79);
+        font-size: 22px;
+        margin-top: 20px;
     }
 
     #renderdata>div:nth-child(5) {
@@ -418,16 +384,14 @@
 
     #renderdata,
     #renderdata2 {
-       display: flex;
-       flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
         margin: auto;
     }
-
     #renderdata>div,
     #renderdata2>div {
         padding: 10px;
         width: 40%;
-
     }
 
     #renderdata>div>img,
@@ -439,6 +403,7 @@
 
     #bank {
         margin-top: 20px;
+
     }
 
     #bank>div:nth-child(1) {
@@ -475,77 +440,45 @@
     }
 
     #brandstore {
-
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         gap: 15px;
         margin-bottom: 30px;
-    }
 
-    /* #footer {
-    border: 2px solid firebrick;
-} */
-
-    #foot1 {
-        width: 100%;
-    }
-
-    #foot2 {
-        width: 100%;
-
-    }
-
-    .sec {
-        margin-top: 60px;
-    }
-
-    .third {
-        margin-top: 60px;
-    }
-
-    .forth {
-        margin-top: 350px;
-    }
-
-    .second {
-        margin-left: 50px;
-        width: 900px;
-
-    }
-
-    .second img {
-        width: 80%;
     }
 
     .render1 {
         margin-top: -20px;
-        width: 100%;
+        width: 85%;
         height: 40px;
         margin-bottom: 5px;
-        
     }
-    
+
     .render2 {
         width: 100%;
-    
     }
-    
+
     .render2>i {
         font-size: 10px;
     }
-    
+
     .render2>button {
         width: 100px;
         font-size: 12px;
     }
-
+    #item>h4{
+        font-size: 14px;
+    }
     .category {
         color: rgb(112, 105, 105);
         font-size: 15px;
         margin-top: -16px;
+
     }
-   #slidshow{
-    width: 105%;
-    height: 120%;
-   }
+
+    #slidshow {
+        width: 100%;
+        height: 200px;
+
+    }
 }

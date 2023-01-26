@@ -106,3 +106,7 @@ function deletes(event){
     total=0
     renderdall(temp)
 }
+let loader=document.querySelector("#loading");
+function loadkar(){
+    loader.style.display="none"
+}

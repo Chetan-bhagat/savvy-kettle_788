@@ -14,16 +14,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 <body>
-
+<!-- ****************************NAVBAR**************************** -->
     <div id="navbar">
         <div id="nav1">
             <i><ion-icon name="call-outline"></ion-icon> 1800 123 1000</i>
             <i> <ion-icon name="location-outline"></ion-icon> Bangalore</i>
-            <i id="username"><a href="login.html"><ion-icon name="person-outline"></ion-icon> login/sign up</a></i>
+            <i id="username" onmouseover="logoutdis()"onmouseout="logoutremove()"><a href="login.html"><ion-icon name="person-outline"></ion-icon>
+                    login/sign up</a></i>
+        </div>
+        <div id="log" onmouseover="logoutdis()" onmouseout="logoutremove()">
+
+            <div class="log">My Account</div>
+            <div class="log">My Basket</div>
+            <div class="log">My Order</div>
+            <div class="log">Wallet <span style="color: red;">Rs 0.00</span></div>
+            <div class="log">Customer Service</div>
+            <div class="log lasttab" onclick="logout()"><a id="toggle" href="">Logout</a></div>
+
         </div>
         <div id="nav2">
             <a href="index.html"><img id=logo src="./Images/Green Basket.png"></a>
-            <div style="background-color: white;"><input placeholder="Serch Your Product">
+            <div style="background-color: white;"><input placeholder="Search Your Product">
                 <div><ion-icon id="search" name="search-outline"></ion-icon></div>
             </div>
             <div>
@@ -34,11 +45,16 @@
             </div>
 
         </div>
+
         <div>
-            <button class="innav">SHOP BY CATEGORY &#8595 </button>
+            <button class="innav" onmouseover="category()">SHOP BY CATEGORY &#8595 </button>
             <button class="innav"><ion-icon id="tag" name="pricetags-sharp"></ion-icon>OFFERS</i></button>
         </div>
     </div>
+<!-- ****************************NAVBAR**************************** -->
+
+
+
     <!-- **************TAB****************** -->
     <div id="mediaqueryfortab">
         <div><a href=""><i class="fa-solid fa-bars"></i></a><a href="login.html"><i class="fa-solid fa-user"></i></a>
@@ -52,6 +68,20 @@
         </div>
     </div>
     <!-- **************TAB****************** -->
+    <div id="category" onmouseover="category()" onmouseout="out()">
+        <div><a href="vegetables.html">Vegetables</a></div>
+        <div><a href="Fruits.html">Fruits</a></div>
+        <div><a href="foodgrain_oil.html">Foodgrains, Oil & Masala</a></div>
+        <div><a href="Beverage.html">Beverages</a></div>
+        <div><a href="Snack.html">Snacks & Branded Foods</a></div>
+        <div><a href="Beauty.html">Beauty & Hygiene</a></div>
+        <div><a href="Household.html">Cleaning & Household</a></div>
+        <div><a href="Kitchen.html">Kitchen, Garden & Pets</a></div>
+        <div><a href="Egg.html">Eggs, Meat & Fish</a></div>
+        <div><a href="Badycare.html">Baby Care</a></div>
+        <div><a href="index.html">View All</a></div>
+    </div>
+     <!-- **************TAB****************** -->
     <div id="obstrct">
         <img id="categoryimages" src="./Images/vegetables.webp">
     </div>
