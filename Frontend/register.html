@@ -8,9 +8,129 @@
   <title>Gearbest: Affordable Quality, Fun</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
   <link rel="stylesheet" href="./Css/register.css" />
+  <style>
+    #checkbox{
+      margin-top: 20px;
+    }
+#checkbox p{
+    margin-left: 10px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+@media (min-width: 426px) and (max-width: 800px) {
+  #checkbox p{
+    margin-left: 10px;
+    margin-top: 0px;
+    font-size: 13px;
+}
+  #checkbox{
+    margin: auto;
+    width: 80%;
+      margin-top: 20px;
+    }
+    #checkbox input{
+      border: 0ch;
+    }
+    #signInBody {
+        height: auto;
+        width: 80%;
+        margin:auto;
+        margin-bottom: 50px;
+    }
+    input,.button{
+        width: 200px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .user{
+        width: 220px;
+    }
+    #check{
+       display: none;
+    }
+    #formDiv{
+        margin-top: 30px;
+    }
+    #links >div{
+      padding: 15px;
+       width: 100px;
+     }
+     #links >div>a{
+        font-size: 14px;
+     }
+     #copyright{
+        padding: 1px
+     }
+     #copyright p{
+        font-size: 10px;
+     }
+     #topLogo>a>#home{
+        width: 150px;
+        height: 125px;
+     }
+     
+     #viaGoogle>img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 425px) {
+  #checkbox{
+    margin: auto;
+    width: 80%;
+      margin-top: 20px;
+    }
+    #checkbox input{
+      border: 0ch;
+    }
+    #signInBody {
+        height: auto;
+        width: 80%;
+        margin:auto;
+        margin-bottom: 50px;
+    }
+    input,.button{
+        width: 200px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .user{
+        width: 220px;
+    }
+    #check{
+       display: none;
+    }
+    #formDiv{
+        margin-top: 30px;
+    }
+    #links >div{
+       width: 100px;
+     }
+     #links >div>a{
+        font-size: 14px;
+     }
+     #copyright{
+        padding: 1px
+     }
+     #copyright p{
+        font-size: 10px;
+     }
+     #topLogo>a>#home{
+        width: 150px;
+        height: 125px;
+     }
+     
+     #viaGoogle>img {
+        height: 30px;
+        width: 30px;
+    }
+}
+  </style>
 </head>
 
-<body>
+<body onload="loadkar()">
+  <div id =loading></div>
   <div id="topLogo">
     <a href="index.html"><img id="home" alt="logo" src="./Images/Green Basket.png" /></a>
     <!-- <img src="./Images/navlogo.jpeg" alt="" id="icon" /> -->
@@ -30,7 +150,7 @@
         <input id="password" type="password" placeholder="Password" required />
 
         <div id="checkbox">
-          <input id="check" type="checkbox" />
+          <input  type="checkbox" />
           <p>
             I agree to Green Basket Terms and Conditions and Privacy Policies.
           </p>
@@ -73,7 +193,7 @@
         Password,
       };
       // console.log(payload,"payload")
-      fetch("http://localhost:9168/sign/register", {
+      fetch("https://drab-ruby-gecko-suit.cyclic.app/sign/register", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -109,6 +229,11 @@
     }
 
   });
+  let loader=document.querySelector("#loading");
+function loadkar(){
+    loader.style.display="none"
+}
+
 </script>
 
 <!-- "Name":String,

@@ -13,13 +13,15 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-<body>
-
+<body onload="loadkar()">
+    <div id =loading></div>
+    <!-- ****************************NAVBAR**************************** -->
     <div id="navbar">
         <div id="nav1">
             <i><ion-icon name="call-outline"></ion-icon> 1800 123 1000</i>
             <i> <ion-icon name="location-outline"></ion-icon> Bangalore</i>
-            <i id="username" onmouseover="logoutdis()"><a href="login.html"><ion-icon name="person-outline"></ion-icon>
+            <i id="username" onmouseover="logoutdis()" onmouseout="logoutremove()"><a href="login.html"><ion-icon
+                        name="person-outline"></ion-icon>
                     login/sign up</a></i>
         </div>
         <div id="log" onmouseover="logoutdis()" onmouseout="logoutremove()">
@@ -27,9 +29,9 @@
             <div class="log">My Account</div>
             <div class="log">My Basket</div>
             <div class="log">My Order</div>
-            <div class="log">Wallet Rs 0.00</div>
+            <div class="log">Wallet <span style="color: red;">Rs 0.00</span></div>
             <div class="log">Customer Service</div>
-            <div class="log" onclick="logout()"><a id="toggle" href="">Logout</a></div>
+            <div class="log lasttab" onclick="logout()"><a id="toggle" href="#">Logout</a></div>
 
         </div>
         <div id="nav2">
@@ -51,19 +53,21 @@
             <button class="innav"><ion-icon id="tag" name="pricetags-sharp"></ion-icon>OFFERS</i></button>
         </div>
     </div>
-    <!-- **************TAB****************** -->
-    <div id="mediaqueryfortab">
-        <div><a href=""><i class="fa-solid fa-bars"></i></a><a href="login.html"><i class="fa-solid fa-user"></i></a>
-            <p id="Green"><a href="index.html">Green <spam id="Basket">Basket</a></spam>
-            </p><a href="#">
-                <i class="fa-solid fa-location-dot"></i></a><a href="cart.html"><i><i
-                        class="fa-sharp fa-solid fa-cart-shopping"></i></i></a>
-        </div>
-        <div><input placeholder="Search Your Product">
+    <!-- ****************************NAVBAR**************************** -->
 
+
+    <!-- **************MEDIA QUERY****************** -->
+    <div id="mediaqueryfortab">
+        <div><a href="#"><i class="fa-solid fa-bars"></i></a>
+            <a href="index.html"><p id="Green"> Green <spam id="Basket">Basket</spam></p></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
         </div>
+        <div><input placeholder="Search 18000+ Products"></div>
+        
     </div>
-    <!-- **************TAB****************** -->
+    <!-- **************MEDIA QUERY****************** -->
+
+    <!-- ************** CTEGORIES TAB****************** -->
     <div id="category" onmouseover="category()" onmouseout="out()">
         <div><a href="vegetables.html">Vegetables</a></div>
         <div><a href="Fruits.html">Fruits</a></div>
@@ -77,6 +81,7 @@
         <div><a href="Badycare.html">Baby Care</a></div>
         <div><a href="index.html">View All</a></div>
     </div>
+    <!-- ************** CTEGORIES TAB****************** -->
     <div>
         <img id="slidshow" src="./Images/slidepanner.webp">
     </div>
@@ -151,6 +156,37 @@
         <div><img src="./Images/indiagate.webp">
         </div>
         <div><img src="./Images/durex.webp">
+        </div>
+    </div>
+    <div id="mediaquery1" >
+        <p class="heading2">bigbasket – online grocery store</p>
+        <p>Did you ever imagine that the freshest of <spam class="highligh">fruits and vegetables</spam>, top quality
+            pulses and food grains,<spam class="highligh"> dairy products</spam> and hundreds of branded items could be
+            handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online
+            megastore, bigbasket.com, brings a whopping 20000+ products with more than 1000 brands, to over 4 million
+            happy customers. From household cleaning products to beauty and makeup, and you can now order all your household products and even buy groceries
+            online without travelling long distances or standing in serpentine queues.</p>
+        <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products
+            from groceries to snacks <spam class="highligh"> branded foods </spam> reach you in time.</p>
+        <ul>
+            <li>Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early
+                morning delivery for early birds, to late-night delivery for people who work the late shift, bigbasket
+                caters to every schedule.</li>
+    
+
+        </ul>
+        <button onclick="dis()">Read More</button>
+        <div id="more">
+            <p class="heading2">India’s biggest Online Supermarket</p>
+            <p>bigbasket.com believes in providing the highest level of customer service and is continuously innovating
+                to meet customer expectations. Our On-time Guarantee is one such assurance where we refund 10% of the
+                bill value if the delivery is delayed.If you ever find an item missing on delivery or want to return a product, you
+                can report it to us within 48 hours for a ‘no-questions-asked’ refund.</p>
+            <p>bigbasket.com is synonymous with superior quality and continues to strive for higher levels of customer
+                trust and confidence, by taking feedback and giving our customers what they want. We have added the
+                convenience of pre-cut fruits in our Fresho range. <spam class="highligh">
+                    beverages </spam>that include cool drinks, hot teas, fruit juices and more.</p>
+         
         </div>
     </div>
     <div id="disc">
@@ -258,21 +294,14 @@
 
             </div>
             <div class="second">
-                <p>Sunflower Oils, Wheat Atta, Ghee, Milk, Health Drinks, Flakes, Organic F&V, Namkeen, Eggs, Floor
-                    Cleaners, Other Juices, Leafy Vegetables, Frozen Veg Food, Diapers & Wipes,</p>
+                <p>Sunflower Oils, Wheat Atta, Ghee, Milk, Health Drinks, Flakes, Organic F&V, Namkeen, Eggs</p>
                 <p>Amul, Nescafe , MTR, RED BULL , elite cake, Pediasure, Yummiez, Yera, Yakult, Britannia, Wow Momo,
-                    Fortune , Haldirams , Ferrero, Lays, Patanjali, McCain, kwality walls, Cadbury Dairy Milk, Pedigree,
+                    Fortune.
                 </p>
                 <p>
                     Bangalore, Hyderabad, Mumbai, Pune, Chennai, Delhi, Mysore, Madurai, Coimbatore, Vijayawada-Guntur,
-                    Kolkata, Ahmedabad-Gandhinagar, Nashik Business, Lucknow-Kanpur, Gurgaon, Vadodara, Visakhapatnam,
-                    Surat, Nagpur, Patna, Indore, Chandigarh Tricity, Jaipur, Bhopal, Noida-Ghaziabad, Kochi, Krishna
-                    District, Bhubaneshwar-Cuttack, Guwahati, Renigunta, Hubli, Davanagere, Trichy, Amravati, Raipur,
-                    Rajkot, Gwalior, Bareilly, Allahabad, Hyderabad Rural, Bangalore Rural, Chennai Rural, Vizag Rural,
-                    Lucknow Rural, Noida Rural, Ahmedabad Rural, Bhopal Rural, Bhubaneswar Rural, Coimbatore Rural,
-                    Chandigarh Rural, Gurugram Rural, Guwahati Rural, Indore Rural, Kochi Rural, Kolkata Rural, Mumbai
-                    Rural, Mysore Rural, Nagpur Rural, Patna Rural, Pune Rural, Surat Rural, Vadodara Rural, Jaipur
-                    Rural, Ranchi, Nashik, Agra, Kozhikode, </p>
+                    Kolkata, Noida-Ghaziabad, Kochi,etc
+                    District </p>
                 <p>
                     Cash on delivery </p>
                 <img src="./Images/footer.png">

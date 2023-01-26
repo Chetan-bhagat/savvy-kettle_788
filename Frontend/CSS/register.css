@@ -24,11 +24,11 @@ body {
 
 #signInBody {
     height: auto;
-    width: 37%;
-    margin-top: 20px;
-    margin-left: 34%;
+    width: 40%;
+    margin:auto;
+    margin-top: 80px;
     margin-bottom: 100px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #main {
@@ -42,13 +42,15 @@ body {
     padding-left: 30px;
     display: flex;
     gap: 40px;
+    justify-content: space-around;
 }
 
 a {
     text-decoration: none;
-    color: grey;
+    color: rgb(86, 85, 85);
     font-weight: bolder;
     text-decoration: none;
+    font-size: 18px;
 }
 
 a:hover {
@@ -60,7 +62,7 @@ a:hover {
     height: auto;
     width: 90%;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 50px;
 }
 
 #form {
@@ -68,21 +70,22 @@ a:hover {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(auto);
     gap: 15px;
+    margin: auto    ;
 }
 
 input {
     padding: 15px 15px 15px 15px;
     /* border: 1px solid yellow; */
     border-radius: 5px;
-    outline: 1px solid rgb(76, 142, 43);
+    outline: 1.5px solid rgb(76, 142, 43);
     border: none;
+    width: 90%;
+    margin: auto ;   
 
 }
 
 input:focus {
     outline: 2px solid rgb(76, 142, 43);
-
-
 }
 
 #viaGoogle {
@@ -108,22 +111,13 @@ input:focus {
     margin-bottom: 30px;
 }
 
-#tip {
-    margin-top: -20px;
-}
-
-#tip>p {
-    font-size: smaller;
-    color: orangered;
-}
 
 #check{
+    width:100%;
+    margin: auto;
     display: flex;
-
-}
-
-#check>p {
-    font-size: smaller;
+    margin-top: 40px;
+    justify-content: space-between;
 }
 
 input[type="checkbox"] {
@@ -177,35 +171,12 @@ input[type="checkbox"] {
     border-bottom: 0px;
     color: grey;
 }
-
-#withCaptcha {
+.user{
+    width: 97%;
+}
+#checkbox{
     display: flex;
-}
-
-#captcha {
-    border: 1px solid grey;
-    border-right: 0px;
-}
-
-#randomNum {
-    padding-left: 100px;
-    padding-right: 70px;
-    /* margin-right: 20px; */
-    border: 1px solid grey;
-    border-left: 0px;
-    text-decoration: line-through;
-}
-
-#options>div:nth-child(1)>p {
-    /* border: 1px solid red; */
-    overflow: hidden;
-    width: 90px;
-    padding-top: 10px;
-}
-
-#bottom {
-    margin-top: 100px;
-    position: absolute;
+    justify-content: space-between;
 }
 
 /* ****************Delete*************** */
@@ -214,66 +185,31 @@ input[type="checkbox"] {
     a{
         text-decoration: none;
     }
-    input,.button{
-        width: 155px;
-        padding: 10px;
-        font-size: 12px;
-        margin: auto;
-    }
-    .user{
-        width: 175px;
-    }
-    #form>#check{
-        width: 30%;
-    }
-    #check{
-        display: none;
-     }
-     #links{
-        padding: 0%;
-        margin: auto;
-        justify-content: space-evenly;
-     }
-     #links >div{
-       width: 100px;
-     }
-     #links >div>a{
-        font-size: 15px;
-     }
-     #copyright p{
-        font-size: 10px;
-     }
-     #topLogo>a>#home{
-        width: 150px;
-        height: 125px;
-     }
-    
-}
-@media (min-width: 0px) and (max-width: 424px) {
-    a{
-        text-decoration: none;
+    #signInBody {
+        height: 400px;
+        width: 70%;
+        margin:auto;
+        margin-bottom: 50px;
     }
     input,.button{
-        width: 105px;
+        width: 200px;
         padding: 10px;
         font-size: 12px;
     }
     .user{
-        width: 125px;
+        width: 220px;
     }
     #check{
        display: none;
     }
-    #links{
-        padding: 0%;
-        margin: auto;
-        justify-content: space-evenly;
-     }
-     #links >div{
+    #formDiv{
+        margin-top: 30px;
+    }
+    #links >div{
        width: 100px;
      }
      #links >div>a{
-        font-size: 12px;
+        font-size: 14px;
      }
      #copyright{
         padding: 1px
@@ -286,5 +222,55 @@ input[type="checkbox"] {
         height: 125px;
      }
      
+     #viaGoogle>img {
+        height: 30px;
+        width: 30px;
+    }
+    
+}
+@media (min-width: 0px) and (max-width: 424px) {
+    a{
+        text-decoration: none;
+    }
+    #signInBody {
+        height: 400px;
+        width: 70%;
+        margin:auto;
+        margin-bottom: 50px;
+    }
+    input,.button{
+        width: 200px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .user{
+        width: 220px;
+    }
+    #check{
+       display: none;
+    }
+    #formDiv{
+        margin-top: 30px;
+    }
+    #links >div{
+       width: 100px;
+     }
+     #links >div>a{
+        font-size: 14px;
+     }
+     #copyright{
+        padding: 1px
+     }
+     #copyright p{
+        font-size: 10px;
+     }
+     #topLogo>a>#home{
+        width: 150px;
+        height: 125px;
+     }
      
+     #viaGoogle>img {
+        height: 30px;
+        width: 30px;
+    }
 }

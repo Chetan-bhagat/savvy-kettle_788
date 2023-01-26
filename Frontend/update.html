@@ -115,7 +115,7 @@
     let Image = document.getElementById("Image").value;
     let obj = { Name, Price, Category, Image };
     await fetch(
-      `http://localhost:9168/admin/update/${ProductID}`,
+      `https://zealous-cardigan-newt.cyclic.app/admin/update/${ProductID}`,
       {
         method: "PATCH",
         headers: {

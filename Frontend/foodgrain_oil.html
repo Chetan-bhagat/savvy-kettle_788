@@ -237,7 +237,7 @@
 render()
 let temp=[]
 async function render() {
-   await fetch("http://localhost:9168/products/foodgrain_oil").
+   await fetch("https://drab-ruby-gecko-suit.cyclic.app/products/foodgrain_oil").
     then((res) => {
         return res.json()
     }).then((data) => {
@@ -264,7 +264,7 @@ function alldata(data){
  // *****************Common************
  count();
     async function count() {
-        await fetch("http://localhost:9168/cart").
+        await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
             then((res) => {
                 return res.json();
             }).then((data) => {

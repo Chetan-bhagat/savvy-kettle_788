@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./Css/register.css" />
 </head>
 
-<body>
+<body onload="loadkar()">
+  <div id =loading></div>
   <div id="topLogo">
     <a href="index.html"><img id="home" alt="logo" src="./Images/Green Basket.png" /></a>
   </div>
@@ -25,7 +26,7 @@
         <input id="email" type="email" placeholder="Email" required />
         <input id="password" type="password" placeholder="Password" required />
         <div id="check">
-          <input id="check" type="checkbox" />
+          <input  type="checkbox" />
           <p>Keep me logged in</p>
           <a id="forget" href="">Forgot your password?</a>
         </div>
@@ -60,7 +61,7 @@
         Email,
         Password,
       };
-      fetch("http://localhost:9168/sign/login", {
+      fetch("https://zealous-cardigan-newt.cyclic.app/sign/login", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +83,7 @@
       )
       setTimeout(function () {
         window.location.href = "index.html";
-      }, 2000);
+      }, 1000);
           // window.location.href = "index.html"
         } else if (data.msg == "Invalid Password") {
           swal(
@@ -136,5 +137,10 @@
       );
     }
   });
+  let loader=document.querySelector("#loading");
+function loadkar(){
+    loader.style.display="none"
+}
+
 </script>
 

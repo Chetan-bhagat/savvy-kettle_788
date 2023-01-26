@@ -21,11 +21,12 @@ let timer = setInterval(() => {
 
 
 }, 2000);
-if (localStorage.getItem("username") ==="undefined") {
-    console.log("intari",localStorage.getItem("username"))
+
+if (localStorage.getItem("username") ==="undefined" || localStorage.getItem("username") ==="null" || localStorage.getItem("username") ===null) {
+    document.querySelector(".lasttab").innerHTML=`<a id="toggle" href="login.html"> Login</a>`
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> login/signup</a>`
 }else{
-    console.log("in",localStorage.getItem("username"))
+    document.querySelector(".lasttab").innerHTML=`<a id="toggle" href="#"> Logout</a>`
     document.querySelector("#username").innerHTML = `<a href="login.html"><ion-icon name="person-outline"></ion-icon> ${localStorage.getItem("username")}</a>`
     
 }
@@ -33,7 +34,7 @@ if (localStorage.getItem("username") ==="undefined") {
 let temp = [];
 render()
 async function render() {
-    await fetch("http://localhost:9168/products").
+    await fetch("https://drab-ruby-gecko-suit.cyclic.app/products").
         then((res) => {
             return res.json()
         }).then((data) => {
@@ -42,13 +43,13 @@ async function render() {
                 return index<5
             });
             let remain=data.filter((item,index)=>{
-                return index>5 && index<21
+                return index>4
             });
             allremaindata(remain)
             alldata(limit)
         });
 
-   await fetch("http://localhost:9168/cart").
+   await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart").
         then((res) => {
             return res.json();
         }).then((data) => {
@@ -69,8 +70,8 @@ function allremaindata(data) {
     // console.log(data)
     let D = data.map((item,index) => {
         return `<div id="item"><img src="${item.Image}">
-        <h4>${item.Name}</h4>
-        <p class="category">${item.Category}</p>
+        <h4>${item.Name.substring(0,18)}</h4>
+        <p class="category">${item.Category.substring(0,11)}</p>
         <div class="render1"> <p id="markprice">MRP <spam class="mrp" >Rs. ${String(Math.floor(Number(item.Price) * 1.3))}</spam></p>
         <p class="price">Rs. ${item.Price}</p>
         </div>
@@ -85,8 +86,8 @@ function alldata(data) {
     // console.log(data)
     let D = data.map((item,index) => {
         return `<div id="item"><img src="${item.Image}">
-        <h4>${item.Name}</h4>
-        <p class="category">${item.Category}</p>
+        <h4>${item.Name.substring(0,18)}</h4>
+        <p class="category">${item.Category.substring(0,11)}</p>
         <div class="render1"> <p id="markprice">MRP <spam class="mrp" >Rs. ${String(Math.floor(Number(item.Price) * 1.3))}</spam></p>
         <p class="price">Rs. ${item.Price}</p>
         </div>
@@ -105,6 +106,7 @@ function category() {
     document.querySelector("#category").style.display = "block"
 }
 function out() {
+    // console.log("hgd")
     document.querySelector("#category").style.display = "none"
 }
 
@@ -178,7 +180,7 @@ async function addtocart(event) {
         alert("Login First Please");
         return
     };
-    await fetch("http://localhost:9168/cart/addtocart", {
+    await fetch("https://drab-ruby-gecko-suit.cyclic.app/cart/addtocart", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -221,7 +223,7 @@ function cart(){
 function logout(){
     localStorage.setItem("token",undefined);
     localStorage.setItem("username",undefined);
-    location.reload();
+    document.querySelector("#toggle").innerHTML="Login";
 }
 function logoutdis(){
   document.querySelector("#navbar>#log").style.display="block"
@@ -229,4 +231,8 @@ function logoutdis(){
 }
 function logoutremove(){
     document.querySelector("#navbar>#log").style.display="none"
+};
+let loader=document.querySelector("#loading");
+function loadkar(){
+    loader.style.display="none"
 }
