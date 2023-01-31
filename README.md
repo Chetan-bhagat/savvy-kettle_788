@@ -1,4 +1,3 @@
-<img src="https://user-images.githubusercontent.com/113410376/215767988-bdce5a02-1252-4ab1-8466-a425a5987d6e.png">
 <h1 align="center"> Green Basket </h1>
 <h2 align="center">It's E-commerce web application with all the major functionalities. </h2>
 <br>
