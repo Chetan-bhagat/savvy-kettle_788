@@ -46,7 +46,7 @@
  <p> @2023 Chetan Bhagat </p>
  <h3> Show your support 🙌</h3>
  <p> Give ⭐ , If you 🫶 like the project</P>
- <img src="https://user-images.githubusercontent.com/113410376/215766551-38e993cb-a298-4db7-8889-6d45e36c5f33.png">
+ 
  
  
 
